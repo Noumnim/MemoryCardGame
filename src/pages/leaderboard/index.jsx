@@ -1,18 +1,25 @@
-import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Grid, Typography, useMediaQuery,Button } from '@mui/material';
+import {useNavigate } from 'react-router-dom';
 import React from 'react'
 import crown from '../../assets/crown.svg'
 import Controller from './controller';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function LeaderBoard() {
     const controller = Controller();
     const matches = useMediaQuery('(min-width:600px)');
-
+    const navigate = useNavigate();
     return (
         <Box>
+            
             <Grid container spacing={2} columns={16} sx={{ flexGrow: 1, justifyContent: 'center', marginTop: '20px' }}>
                 <Grid sx={{ position: 'absolute', left: '0', marginTop: '150px' }}>
                     <img style={{ width: matches?'90px':'40px' }} src={crown} alt='crown' />
                 </Grid>
+                <Button sx={{borderRadius:'50%'}}  onClick={() => navigate('/')}>
+                <ArrowBackIcon />
+                </Button>
+                
                 <Grid xs={12} spacing={2} sx={{ display: 'flex', justifyContent: 'center', margin: '10px' }}>
                     <Typography sx={{ fontSize: '40px', color: '#18618B', fontWeight: 'bold' }}>Leaderboard</Typography>
                 </Grid>
