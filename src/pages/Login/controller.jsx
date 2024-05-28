@@ -44,7 +44,6 @@ const UserNameController = () => {
     handleInputChange,
     handleSubmit,
     username,
-  
   };
 };
 

@@ -2,6 +2,7 @@ import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import React from 'react'
 import crown from '../../assets/crown.svg'
 import Controller from './controller';
+
 function LeaderBoard() {
     const controller = Controller();
     const matches = useMediaQuery('(min-width:600px)');

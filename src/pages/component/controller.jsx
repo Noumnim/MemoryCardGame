@@ -128,11 +128,11 @@ const MemoryCardController = () => {
                 time: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
             });
             console.log("Game data updated successfully");
-            navigate('/win', { state: { moves: turns, time: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}` } });
+            navigate('/win', { state: { moves: turns, time: `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`,username } });
         } catch (e) {
             console.error("Error updating document: ", e);
         }   
-    }, [docId, turns, minutes, seconds, navigate]);
+    }, [docId, turns, minutes, seconds, navigate,username]);
 
     useEffect(() => {
         if (matchedPairs === totalPairs) {
