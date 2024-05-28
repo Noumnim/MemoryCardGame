@@ -23,7 +23,7 @@ function Home() {
           Time:{controllers.minutes < 10 ? `0${controllers.minutes}` : controllers.minutes}:{controllers.seconds < 10 ? `0${controllers.seconds}` : controllers.seconds}
         </Typography>
       </Grid>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent:'center',marginTop:matches?'0px':'150px'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent:'center',marginTop:matches?'0px':'60px'}}>
             <Grid container spacing={2} sx={{ width: '90%', maxWidth: '500px',display:'flex'}}>
                 {controllers.cards.map((card) => (
                     <Grid item xs={3} key={card.id}>
