@@ -32,7 +32,7 @@ function LeaderBoard() {
 
                 {controller.leaderboard.map((entry, index) => (
                     <Grid xs={12} spacing={2} sx={{ background: '#B7E5FF', display: 'flex', justifyContent: 'space-between', margin: '10px', width: '400px', height: '60px', borderRadius: '20px', boxShadow: '3px 3px 5px #aaaaaa', padding: '20px' }}>
-                        <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>{entry.name} </Typography>
+                        <Typography sx={{ fontSize: '20px', fontWeight: 'bold' }}>{entry.name}</Typography>
                         <Typography sx={{ fontSize: '20px', color: '#757575', fontWeight: 'bold',marginLeft:'60px'  }}>{entry.moves}</Typography>
                         <Typography sx={{ fontSize: '20px', color: '#18618B', fontWeight: 'bold' }}>{entry.time}</Typography>
                     </Grid>

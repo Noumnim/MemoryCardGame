@@ -14,22 +14,19 @@ const UserNameController = () => {
         moves: 0,
         time: '00:00'
       });
-      console.log("Document written with IDcard: ", docRef.id); 
       return docRef.id;
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
-  console.log(db);
   const handleInputChange = (event) => {
     const value = event.target.value;
     setUsername(value);
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (username.trim().length > 10) {
-      alert("Username must be exactly 10 characters");
+      alert("Usernames must not exceed 10 characters");
       return;
     }
     try {

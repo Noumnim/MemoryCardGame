@@ -1,10 +1,11 @@
-import { Box, Button, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Backdrop, Box, Button, Grid, Typography, useMediaQuery } from '@mui/material';
 import React from 'react'
 import homePoint from '../../assets/homePoint.svg'
 import homeDo from "../../assets/homeDo.svg"
 import SingleCards from '../component/SingleCards';
 import MemoryCardController from '../component/controller';
 import { useNavigate } from 'react-router-dom';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 
 function Home() {
@@ -48,6 +49,23 @@ function Home() {
       <Grid>
 
       </Grid>
+      <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={controllers.showBackdrop}
+            >
+                {controllers.showCountdown ? (
+                    <CountdownCircleTimer
+                        isPlaying
+                        duration={10}
+                        colors="#38B6FF"
+                        onComplete={() => controllers.setShowBackdrop(true)}
+                    >
+                        {({ remainingTime }) => <Typography variant="h4">{remainingTime}</Typography>}
+                    </CountdownCircleTimer>
+                ) : (
+                    <Typography variant="h4">You Lose</Typography>
+                )}
+            </Backdrop>
     </Box>
   )
 }
